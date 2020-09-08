@@ -7,8 +7,7 @@ import utils
 
 
 def main():
-    logger = utils.logger.getLogger('log1.log')
-    logger.warning('ABC')
+    # logger = utils.logger.getLogger('log1.log')
 
     url = "http://www.cosdna.com/cht/cosmetic_18cf249693.html" # KIEHL'S (契爾氏) 亞馬遜白泥淨膚面膜RARE EARTH DEEP PORE CLEANSING MASQUE
     # response = rq.get(url) # 用 requests 的 get 方法把網頁抓下來
@@ -29,10 +28,12 @@ def main():
     trs = soup.find_all("tr", class_="tr-i")
     for tr in trs:
         # import pdb; pdb.set_trace()
+        tds = tr.find_all("td")
         print(tr.find_all("td")[0].span.text)
         print(tr.find_all('td')[0].find_all('div',class_='small')[0].text.strip())
+        print(tr.fin)
+        break
 
-    
 
 
 
