@@ -28,7 +28,7 @@ def main():
     trs = soup.find_all("tr", class_="tr-i")
     for tr in trs:
         # import pdb; pdb.set_trace()
-        tds = tr.find_all("td")
+        tds = tr.find_all("td")          
         print(tr.find_all("td")[0].span.text)
         print(tr.find_all('td')[0].find_all('div',class_='small')[0].text.strip())
         print(tr.fin)
